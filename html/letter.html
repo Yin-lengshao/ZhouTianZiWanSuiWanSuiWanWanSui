@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>周天子万岁万岁万万岁！！！</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --transition-base: all 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --transition-fast: all 0.8s ease;
+            --card-bg: rgba(255, 255, 255, 0.08);
+            --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.9);
+            --accent-glow: 0 0 20px currentColor, 0 0 40px currentColor;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-primary);
+            overflow-x: hidden;
+            min-height: 100vh;
+            transition: var(--transition-base);
+            background-size: 400% 400%;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .decor-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .danmaku-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        .danmaku {
+            position: absolute;
+            white-space: nowrap;
+            font-size: 24px;
+            color: white;
+            animation: danmakuMove 8s linear;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            z-index: 50;
+            opacity: 0;
+        }
+
+        @keyframes danmakuMove {
+            0% {
+                transform: translateX(100vw);
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+
+        body.part1 {
+            background:
+                radial-gradient(circle at 30% 20%, rgba(102, 187, 255, 0.2) 0%, transparent 60%),
+                radial-gradient(circle at 70% 80%, rgba(179, 229, 252, 0.15) 0%, transparent 70%),
+                linear-gradient(135deg, #050a1f 0%, #0f1c42 50%, #1a3263 100%);
+            --accent-color: #64ffda;
+            --bg-animation: part1Move 30s ease infinite;
+        }
+        body.part1::before {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.07'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        body.part2 {
+            background:
+                radial-gradient(circle at 40% 20%, rgba(255, 179, 204, 0.2) 0%, transparent 60%),
+                radial-gradient(circle at 60% 80%, rgba(255, 105, 180, 0.15) 0%, transparent 70%),
+                linear-gradient(135deg, #2d0725 0%, #5c1148 50%, #8a1a6b 100%);
+            --accent-color: #ff80ab;
+            --bg-animation: part2Move 30s ease infinite;
+        }
+        body.part2::before {
+            background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.07'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        body.part3 {
+            background:
+                radial-gradient(circle at 30% 70%, rgba(144, 238, 144, 0.2) 0%, transparent 60%),
+                radial-gradient(circle at 70% 30%, rgba(72, 209, 204, 0.15) 0%, transparent 70%),
+                linear-gradient(135deg, #002b21 0%, #1a5e38 50%, #2d8639 100%);
+            --accent-color: #b2ff59;
+            --bg-animation: part3Move 30s ease infinite;
+        }
+        body.part3::before {
+            background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.07'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0 16h12v6H70v-6zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        body.part4 {
+            background:
+                radial-gradient(circle at 60% 40%, rgba(255, 235, 59, 0.2) 0%, transparent 60%),
+                radial-gradient(circle at 20% 60%, rgba(255, 152, 0, 0.15) 0%, transparent 70%),
+                linear-gradient(135deg, #5c2b00 0%, #a04a00 50%, #e07a00 100%);
+            --accent-color: #fff59d;
+            --bg-animation: part4Move 30s ease infinite;
+        }
+        body.part4::before {
+            background-image: url("data:image/svg+xml,%3Csvg width='65' height='65' viewBox='0 0 65 65' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.07'%3E%3Cpath d='M32 34c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10zm0-16c3.314 0 6 2.686 6 6s-2.686 6-6 6-6-2.686-6-6 2.686-6 6-6z' /%3E%3Cpath d='M16.5 49.5c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10zm0-16c3.314 0 6 2.686 6 6s-2.686 6-6 6-6-2.686-6-6 2.686-6 6-6z' /%3E%3Cpath d='M47.5 49.5c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10zm0-16c3.314 0 6 2.686 6 6s-2.686 6-6 6-6-2.686-6-6 2.686-6 6-6z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+            animation: bgTextureMove 60s linear infinite;
+        }
+        @keyframes bgTextureMove {
+            from { background-position: 0 0; }
+            to { background-position: 800px 800px; }
+        }
+
+        @keyframes part1Move { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        @keyframes part2Move { 0% { background-position: 100% 50%; } 50% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
+        @keyframes part3Move { 0% { background-position: 0% 30%; } 50% { background-position: 100% 70%; } 100% { background-position: 0% 30%; } }
+        @keyframes part4Move { 0% { background-position: 100% 70%; } 50% { background-position: 0% 30%; } 100% { background-position: 100% 70%; } }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite alternate;
+        }
+        .star.large { width: 2px; height: 2px; box-shadow: 0 0 8px 1px white; }
+        .star.medium { width: 1.5px; height: 1.5px; box-shadow: 0 0 5px 0.5px white; }
+        .star.small { width: 1px; height: 1px; box-shadow: 0 0 3px 0.3px white; }
+        .nebula {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.2;
+        }
+
+        .petal {
+            position: absolute;
+            background: var(--accent-color);
+            border-radius: 100% 0;
+            opacity: 0.6;
+            animation: floatPetal 15s linear infinite;
+        }
+        .glow-spot {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+            opacity: 0.3;
+            animation: pulse 8s infinite alternate;
+        }
+
+        .leaf {
+            position: absolute;
+            background: var(--accent-color);
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+            opacity: 0.7;
+            animation: floatLeaf 20s ease-in-out infinite;
+        }
+        .light-ray {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--accent-color), transparent);
+            transform-origin: top center;
+            animation: rotateRay 30s linear infinite;
+        }
+
+        .sparkle {
+            position: absolute;
+            background: var(--accent-color);
+            border-radius: 50%;
+            box-shadow: 0 0 10px 2px var(--accent-color);
+            animation: sparkle 3s infinite alternate;
+        }
+        .flare {
+            position: absolute;
+            background: radial-gradient(ellipse, var(--accent-color) 0%, transparent 70%);
+            opacity: 0.4;
+            animation: floatFlare 25s linear infinite;
+        }
+
+        .mouse-trail {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+            transition: all 0.8s ease-out;
+        }
+
+        .welcome-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 1.5s ease-out;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .welcome-screen::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: gridMove 10s linear infinite;
+        }
+        @keyframes gridMove { from { background-position: 0 0; } to { background-position: 30px 30px; } }
+        .welcome-content {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .big-characters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .char {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(30px) scale(0.9);
+            animation: charAppear 0.6s forwards;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.5);
+            color: white;
+            position: relative;
+        }
+        .char::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: white;
+            transform: scaleX(0);
+            animation: charUnderline 0.6s forwards 0.3s;
+        }
+        @keyframes charAppear { to { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes charUnderline { to { transform: scaleX(1); } }
+        .welcome-message {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            opacity: 0;
+            animation: fadeInUp 1s forwards 3.5s;
+            color: white;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        nav {
+            position: sticky;
+            top: 20px;
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 15px 0;
+            z-index: 100;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transition: var(--transition-base);
+            transform: translateY(-100px) scale(0.95);
+            opacity: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        nav.visible { transform: translateY(0) scale(1); opacity: 1; }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            gap: 8px;
+            padding: 0 15px;
+        }
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            transform-origin: right center;
+            border-radius: 25px;
+        }
+        .nav-links a:hover::before,
+        .nav-links a.active::before {
+            transform: scaleX(1);
+            transform-origin: left center;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-color);
+            box-shadow: var(--accent-glow);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            transform-origin: right center;
+        }
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            transform: scaleX(1);
+            transform-origin: left center;
+        }
+
+        .content-section {
+            min-height: 100vh;
+            padding: 120px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(50px) scale(0.98);
+            transition: var(--transition-base);
+            position: relative;
+            z-index: 10;
+        }
+        .content-section.visible { opacity: 1; transform: translateY(0) scale(1); }
+        .section-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 0%, transparent 100%);
+            pointer-events: none;
+        }
+        .section-title {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            margin-bottom: 35px;
+            color: var(--accent-color);
+            text-shadow: var(--accent-glow);
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: titleFade 0.8s forwards 0.3s;
+        }
+        @keyframes titleFade { to { opacity: 1; transform: translateY(0); } }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 3px;
+            box-shadow: var(--accent-glow);
+        }
+        .section-content {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        .section-content p {
+            margin-bottom: 28px;
+            position: relative;
+            padding-left: 35px;
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        .section-content p::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            box-shadow: var(--accent-glow);
+        }
+
+        .content-section.visible .section-content p:nth-child(1) { animation: paragraphFade 0.6s forwards 0.5s; }
+        .content-section.visible .section-content p:nth-child(2) { animation: paragraphFade 0.6s forwards 0.7s; }
+        .content-section.visible .section-content p:nth-child(3) { animation: paragraphFade 0.6s forwards 0.9s; }
+        .content-section.visible .section-content p:nth-child(4) { animation: paragraphFade 0.6s forwards 1.1s; }
+        .content-section.visible .section-content p:nth-child(5) { animation: paragraphFade 0.6s forwards 1.3s; }
+        .content-section.visible .section-content p:nth-child(6) { animation: paragraphFade 0.6s forwards 1.5s; }
+        @keyframes paragraphFade { to { opacity: 1; transform: translateY(0); } }
+
+        .progress-indicator {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 90;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .progress-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: var(--transition-fast);
+            cursor: pointer;
+            position: relative;
+        }
+        .progress-dot::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            opacity: 0.3;
+            transition: var(--transition-fast);
+        }
+        .progress-dot.active {
+            background: var(--accent-color);
+            box-shadow: var(--accent-glow);
+        }
+        .progress-dot:hover::after { transform: translate(-50%, -50%) scale(1); }
+
+        .danmaku-input-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .danmaku-input {
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            width: 250px;
+            transition: all 0.3s ease;
+        }
+
+        .danmaku-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+            width: 300px;
+        }
+
+        .danmaku-send {
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: none;
+            background: var(--accent-color);
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .danmaku-send:hover {
+            transform: scale(1.05);
+            box-shadow: var(--accent-glow);
+        }
+
+        @media (max-width: 768px) {
+            .progress-indicator { display: none; }
+            .nav-links { gap: 5px; }
+            .nav-links a { padding: 8px 14px; font-size: 0.9rem; }
+            .section-card { padding: 30px 20px; }
+            .section-content { font-size: 1rem; }
+            .section-content p { padding-left: 25px; margin-bottom: 22px; }
+
+            .danmaku-input-container {
+                width: 90%;
+                padding: 8px 15px;
+            }
+
+            .danmaku-input {
+                width: 70%;
+            }
+
+            .danmaku-input:focus {
+                width: 75%;
+            }
+
+            .danmaku {
+                font-size: 18px;
+            }
+        }
+
+        @keyframes twinkle { 0% { opacity: 0.3; transform: scale(0.8); } 100% { opacity: 1; transform: scale(1.2); } }
+        @keyframes floatPetal { 0% { transform: translateY(100vh) rotate(0deg); opacity: 0; } 20% { opacity: 0.6; } 80% { opacity: 0.6; } 100% { transform: translateY(-100px) rotate(360deg); opacity: 0; } }
+        @keyframes pulse { 0% { transform: scale(0.8); opacity: 0.2; } 100% { transform: scale(1.2); opacity: 0.4; } }
+        @keyframes floatLeaf { 0% { transform: translateY(100vh) rotate(-10deg); opacity: 0; } 10% { opacity: 0.7; } 90% { opacity: 0.7; } 100% { transform: translateY(-100px) rotate(10deg); opacity: 0; } }
+        @keyframes rotateRay { 0% { transform: rotate(0deg) translateX(0); } 100% { transform: rotate(360deg) translateX(0); } }
+        @keyframes sparkle { 0% { opacity: 0.4; transform: scale(0.8); } 100% { opacity: 1; transform: scale(1.2); } }
+        @keyframes floatFlare { 0% { transform: translateY(100vh) translateX(0) scale(0.8); opacity: 0; } 20% { opacity: 0.4; } 80% { opacity: 0.4; } 100% { transform: translateY(-200px) translateX(100px) scale(1.2); opacity: 0; } }
+        @keyframes meteor { from { transform: rotate(60deg) translateY(0); opacity: 1; } to { transform: rotate(60deg) translateY(100vh); opacity: 0; } }
+    </style>
+</head>
+<body class="part1">
+    <div class="decor-container" id="decorContainer"></div>
+
+    <div class="danmaku-container" id="danmakuContainer"></div>
+
+    <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-content">
+            <div class="big-characters">
+                <span class="char" style="animation-delay: 0.1s">小</span>
+                <span class="char" style="animation-delay: 0.3s">周</span>
+                <span class="char" style="animation-delay: 0.5s">同</span>
+                <span class="char" style="animation-delay: 0.7s">学</span>
+                <span class="char" style="animation-delay: 0.9s">天</span>
+                <span class="char" style="animation-delay: 1.1s">天</span>
+                <span class="char" style="animation-delay: 1.3s">开</span>
+                <span class="char" style="animation-delay: 1.5s">心</span>
+                <span class="char" style="animation-delay: 1.7s">!
+
+                </span>
+            </div>
+            <div class="welcome-message">
+                为永不褪色的日子，为曲折光明的前途。<br>点击屏幕或按任意键继续...
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#part1" class="active">好久不见</a></li>
+            <li><a href="#part2">关于肉麻</a></li>
+            <li><a href="#part3">一些闲话</a></li>
+            <li><a href="#part4">上海见！</a></li>
+        </ul>
+    </nav>
+
+    <div class="progress-indicator">
+        <div class="progress-dot active" data-target="part1"></div>
+        <div class="progress-dot" data-target="part2"></div>
+        <div class="progress-dot" data-target="part3"></div>
+        <div class="progress-dot" data-target="part4"></div>
+    </div>
+
+    <div class="danmaku-input-container">
+        <input type="text" class="danmaku-input" placeholder="要不你也讲两句？" maxlength="20">
+        <button class="danmaku-send">发送</button>
+    </div>
+
+    <section id="part1" class="content-section">
+        <div class="section-card">
+            <h2 class="section-title">好久不见</h2>
+            <div class="section-content">
+                <p>全世界最帅最有实力的小周你好呀！！！</p>
+                <p>上次见面还是八月末呢，现在我们小周已经是一个相当老练的大学生啦！太厉害了这也。</p>
+                <p>替我向小乃和曲总问好哦。最近天冷啦，要小心感冒。最近可累了吧，再坚持坚持吧，这学期已经近半了，回太原请你吃好吃的！啊呀，怎么拖拖拉拉和流水账一样来的。</p>
+                <p>哎呀，你不会以为我真的会说什么肉麻的话吧？不会吧不会吧？</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="part2" class="content-section">
+        <div class="section-card">
+            <h2 class="section-title">关于肉麻</h2>
+            <div class="section-content">
+                <p>没想到吧，其实真的有这个部分哦(doge)</p>
+                <p>小周真的是特别特别好的人来的！非常非常非常非常荣幸能和你做朋友！</p>
+                <p>在你这，我可以忘记一事无成的三年（21年也说不准）、忘记对失败与不甘的恐惧、忘记惶惑的徘徊和浑噩的等待。</p>
+                <p>真高兴啊，也真幸运啊。现在的我还不算太坏。现在的我还在读书。现在的我还称得上年轻。</p>
+                <p>在这样一个略带绝望的季节，真的很感谢你！</p>
+                <p>那就让我们一起努力吧，为更好的明天！</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="part3" class="content-section">
+        <div class="section-card">
+            <h2 class="section-title">一些闲话</h2>
+            <div class="section-content">
+                <p>哈！这个部分就轮到我装深沉啦，不然就不符合人设了。</p>
+                <p>希望你早点找到自己所追求的。虽然不知道方向也要很努力的走，可说到底，岸是上不完的。</p>
+                <p>不过，毕竟不是所有的问句都是问题，也不是所有的问题都有答案。冷少也不明白啦。</p>
+                <p>话说回来，虽然大海说起来无边无际，可我们总是站在海岸上嘛。</p>
+                <p>吹吹风也不错，再买个大鱿鱼更是香完了。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="part4" class="content-section">
+        <div class="section-card">
+            <h2 class="section-title">上海见！</h2>
+            <div class="section-content">
+                <p>这次是很认真的商量哦。</p>
+                <p>等我这完事了以后，我去上海找你吧。不过看你期末的安排啦，估计你那会老忙了。</p>
+                <p>或许还可以去泰山？从红门一路走到玉皇顶看日出。再一起尝尝那个煎饼。</p>
+                <p>真的很怕考试的那天啊。记得一定要在我的鼻涕出来之前把纸巾递给我，不然那样就太难看了。</p>
+                <p>哈哈哈哈哈哈，不想那么多啦，上海见！</p>
+                <p>愿你前路珍重，也愿我们来日方长。</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const decorContainer = document.getElementById('decorContainer');
+            const welcomeScreen = document.getElementById('welcomeScreen');
+            const danmakuContainer = document.getElementById('danmakuContainer');
+            const danmakuInput = document.querySelector('.danmaku-input');
+            const danmakuSend = document.querySelector('.danmaku-send');
+
+            let hasEntered = false;
+            let currentTheme = 'part1';
+            let trailElements = [];
+            let danmakuInterval;
+
+            welcomeScreen.addEventListener('click', enterMainContent);
+            document.addEventListener('keydown', enterMainContent);
+
+            function enterMainContent() {
+                if (hasEntered) return;
+                hasEntered = true;
+
+                welcomeScreen.style.opacity = '0';
+                setTimeout(() => {
+                    welcomeScreen.style.display = 'none';
+                    document.querySelector('nav').classList.add('visible');
+                    document.removeEventListener('keydown', enterMainContent);
+
+                    setTimeout(() => {
+                        document.querySelector('#part1').classList.add('visible');
+                        createThemeElements('part1');
+                        startDanmakuSystem();
+                    }, 300);
+                }, 1500);
+            }
+
+            function clearDecorElements() {
+                decorContainer.innerHTML = '';
+            }
+
+            function clearTrailElements() {
+                trailElements.forEach(el => el.remove());
+                trailElements = [];
+            }
+
+            function createThemeElements(theme) {
+                switch(theme) {
+                    case 'part1':
+                        createStars(300);
+                        createNebulas(5);
+                        createMeteorShower();
+                        break;
+                    case 'part2':
+                        createPetals(80);
+                        createGlowSpots(6);
+                        break;
+                    case 'part3':
+                        createLeaves(60);
+                        createLightRays(12);
+                        break;
+                    case 'part4':
+                        createSparkles(150);
+                        createFlares(8);
+                        break;
+                }
+                addMouseInteraction(theme);
+            }
+
+            function addMouseInteraction(theme) {
+                document.removeEventListener('mousemove', handleMouseMove);
+
+                function createTrailElement(x, y, index) {
+                    const trail = document.createElement('div');
+                    trail.className = 'mouse-trail';
+
+                    switch(theme) {
+                        case 'part1':
+                            trail.style.width = `${5 - index * 1.5}px`;
+                            trail.style.height = trail.style.width;
+                            trail.style.borderRadius = '50%';
+                            trail.style.backgroundColor = '#64ffda';
+                            trail.style.boxShadow = '0 0 8px #64ffda';
+                            trail.style.opacity = `${0.8 - index * 0.3}`;
+                            break;
+                        case 'part2':
+                            trail.style.width = `${12 - index * 3}px`;
+                            trail.style.height = `${8 - index * 2}px`;
+                            trail.style.borderRadius = '100% 0';
+                            trail.style.backgroundColor = '#ff80ab';
+                            trail.style.opacity = `${0.6 - index * 0.2}`;
+                            break;
+                        case 'part3':
+                            trail.style.width = `${10 - index * 2}px`;
+                            trail.style.height = trail.style.width;
+                            trail.style.borderRadius = '50%';
+                            trail.style.backgroundColor = 'transparent';
+                            trail.style.boxShadow = `0 0 ${8 - index * 2}px #b2ff59`;
+                            trail.style.opacity = `${0.7 - index * 0.2}`;
+                            break;
+                        case 'part4':
+                            trail.style.width = `${6 - index * 1.5}px`;
+                            trail.style.height = trail.style.width;
+                            trail.style.borderRadius = '50%';
+                            trail.style.backgroundColor = '#fff59d';
+                            trail.style.boxShadow = '0 0 6px #fff59d';
+                            trail.style.opacity = `${0.7 - index * 0.2}`;
+                            break;
+                    }
+
+                    trail.style.left = `${x}px`;
+                    trail.style.top = `${y}px`;
+                    decorContainer.appendChild(trail);
+                    return trail;
+                }
+
+                function handleMouseMove(e) {
+                    if (trailElements.length > 2) {
+                        const oldest = trailElements.shift();
+                        oldest.remove();
+                    }
+
+                    const newTrail = createTrailElement(e.clientX, e.clientY, trailElements.length);
+                    trailElements.push(newTrail);
+
+                    trailElements.forEach((el, i) => {
+                        if (i < trailElements.length - 1) {
+                            setTimeout(() => {
+                                el.style.transform = `translate(${Math.random() * 10 - 5}px, ${Math.random() * 10 - 5}px)`;
+                                el.style.opacity = `${parseFloat(el.style.opacity) - 0.2}`;
+                            }, 100);
+                        }
+                    });
+                }
+
+                document.addEventListener('mousemove', handleMouseMove);
+            }
+
+            function createStars(count) {
+                for (let i = 0; i < count; i++) {
+                    const star = document.createElement('div');
+                    const size = Math.random() > 0.7 ? 'large' : (Math.random() > 0.5 ? 'medium' : 'small');
+                    star.className = `star ${size}`;
+                    star.style.left = `${Math.random() * 100}%`;
+                    star.style.top = `${Math.random() * 100}%`;
+                    star.style.animationDelay = `${Math.random() * 3}s`;
+                    decorContainer.appendChild(star);
+                }
+            }
+            function createNebulas(count) {
+                const colors = ['#64ffda', '#8be9fd', '#50fa7b'];
+                for (let i = 0; i < count; i++) {
+                    const nebula = document.createElement('div');
+                    nebula.className = 'nebula';
+                    nebula.style.width = `${Math.random() * 400 + 300}px`;
+                    nebula.style.height = nebula.style.width;
+                    nebula.style.left = `${Math.random() * 100}%`;
+                    nebula.style.top = `${Math.random() * 100}%`;
+                    nebula.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    nebula.style.animation = `floatFlare ${Math.random() * 60 + 40}s linear infinite`;
+                    decorContainer.appendChild(nebula);
+                }
+            }
+            function createMeteorShower() {
+                setInterval(() => {
+                    const meteor = document.createElement('div');
+                    meteor.className = 'star large';
+                    meteor.style.width = '1px';
+                    meteor.style.height = '80px';
+                    meteor.style.borderRadius = '0';
+                    meteor.style.background = 'linear-gradient(to bottom, transparent, white)';
+                    meteor.style.left = `${Math.random() * 80 + 10}%`;
+                    meteor.style.top = '-5%';
+                    meteor.style.transform = `rotate(${Math.random() * 10 + 45}deg)`;
+                    meteor.style.animation = 'meteor 1.5s linear forwards';
+                    decorContainer.appendChild(meteor);
+                    setTimeout(() => meteor.remove(), 1500);
+                }, 2000);
+            }
+
+            function createPetals(count) {
+                for (let i = 0; i < count; i++) {
+                    const petal = document.createElement('div');
+                    petal.className = 'petal';
+                    const size = Math.random() * 15 + 8;
+                    petal.style.width = `${size}px`;
+                    petal.style.height = `${size}px`;
+                    petal.style.left = `${Math.random() * 100}%`;
+                    petal.style.animationDelay = `-${Math.random() * 15}s`;
+                    petal.style.animationDuration = `${Math.random() * 10 + 15}s`;
+                    petal.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    decorContainer.appendChild(petal);
+                }
+            }
+            function createGlowSpots(count) {
+                for (let i = 0; i < count; i++) {
+                    const spot = document.createElement('div');
+                    spot.className = 'glow-spot';
+                    const size = Math.random() * 300 + 200;
+                    spot.style.width = `${size}px`;
+                    spot.style.height = `${size}px`;
+                    spot.style.left = `${Math.random() * 100}%`;
+                    spot.style.top = `${Math.random() * 100}%`;
+                    spot.style.animationDelay = `${Math.random() * 5}s`;
+                    decorContainer.appendChild(spot);
+                }
+            }
+
+            function createLeaves(count) {
+                for (let i = 0; i < count; i++) {
+                    const leaf = document.createElement('div');
+                    leaf.className = 'leaf';
+                    const size = Math.random() * 10 + 5;
+                    leaf.style.width = `${size}px`;
+                    leaf.style.height = `${size}px`;
+                    leaf.style.left = `${Math.random() * 100}%`;
+                    leaf.style.animationDelay = `-${Math.random() * 20}s`;
+                    leaf.style.animationDuration = `${Math.random() * 15 + 20}s`;
+                    decorContainer.appendChild(leaf);
+                }
+            }
+            function createLightRays(count) {
+                for (let i = 0; i < count; i++) {
+                    const ray = document.createElement('div');
+                    ray.className = 'light-ray';
+                    ray.style.left = `${Math.random() * 100}%`;
+                    ray.style.opacity = Math.random() * 0.2 + 0.1;
+                    ray.style.animationDelay = `${Math.random() * 10}s`;
+                    ray.style.animationDuration = `${Math.random() * 30 + 40}s`;
+                    decorContainer.appendChild(ray);
+                }
+            }
+
+            function createSparkles(count) {
+                for (let i = 0; i < count; i++) {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'sparkle';
+                    const size = Math.random() * 3 + 1;
+                    sparkle.style.width = `${size}px`;
+                    sparkle.style.height = `${size}px`;
+                    sparkle.style.left = `${Math.random() * 100}%`;
+                    sparkle.style.top = `${Math.random() * 100}%`;
+                    sparkle.style.animationDelay = `${Math.random() * 3}s`;
+                    decorContainer.appendChild(sparkle);
+                }
+            }
+            function createFlares(count) {
+                for (let i = 0; i < count; i++) {
+                    const flare = document.createElement('div');
+                    flare.className = 'flare';
+                    const size = Math.random() * 400 + 200;
+                    flare.style.width = `${size}px`;
+                    flare.style.height = `${size}px`;
+                    flare.style.left = `${Math.random() * 100}%`;
+                    flare.style.animationDelay = `-${Math.random() * 25}s`;
+                    flare.style.animationDuration = `${Math.random() * 30 + 50}s`;
+                    decorContainer.appendChild(flare);
+                }
+            }
+
+            function updateNavActive(theme) {
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${theme}`);
+                });
+            }
+
+            function updateProgressDots(theme) {
+                document.querySelectorAll('.progress-dot').forEach(dot => {
+                    dot.classList.toggle('active', dot.getAttribute('data-target') === theme);
+                });
+            }
+
+            document.querySelectorAll('.progress-dot').forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const target = dot.getAttribute('data-target');
+                    document.querySelector(`#${target}`).scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            initScrollThemeSwitch();
+
+            function initScrollThemeSwitch() {
+                const sections = document.querySelectorAll('.content-section');
+                const navLinks = document.querySelectorAll('.nav-links a');
+                const body = document.body;
+                let isTransitioning = false;
+
+                navLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+
+                        const targetId = link.getAttribute('href').substring(1);
+                        const targetSection = document.querySelector(`#${targetId}`);
+
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    });
+                });
+
+                document.querySelectorAll('.progress-dot').forEach(dot => {
+                    dot.addEventListener('click', () => {
+                        const targetId = dot.getAttribute('data-target');
+                        const targetSection = document.querySelector(`#${targetId}`);
+
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    });
+                });
+
+                function updateTheme(sectionId) {
+                    if (sectionId !== currentTheme) {
+                        currentTheme = sectionId;
+                        body.className = '';
+                        body.classList.add(sectionId);
+                        clearDecorElements();
+                        clearTrailElements();
+                        createThemeElements(sectionId);
+                        updateNavActive(sectionId);
+                        updateProgressDots(sectionId);
+                        document.querySelector(`#${sectionId}`).classList.add('visible');
+                    }
+                }
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !isTransitioning) {
+                            const sectionId = entry.target.getAttribute('id');
+                            updateTheme(sectionId);
+                        }
+                    });
+                }, { threshold: 0.3 });
+
+                sections.forEach(section => {
+                    observer.observe(section);
+                });
+
+                window.addEventListener('resize', () => {
+                    clearDecorElements();
+                    clearTrailElements();
+                    createThemeElements(currentTheme);
+                });
+            }
+
+            function startDanmakuSystem() {
+                const presetMessages = [
+                    "周天子万岁万岁万万岁！！！", "一切顺利! 🎉", "愿你永远快乐！😊",
+                    "祝你心想事成！💖", "愿你梦想成真！✨", "前程似锦！🚀",
+                    "岁岁平安！🎆", "遇见幸运！🍀", "少年心气永不磨灭！🌟",
+                    "友谊长存！👭", "永远幸福！😄", "学业有成！📚",
+                    "保研成功！", "天天开心！🥳", "越来越勇敢，越来越坚定！🎈","'多多珍重！！！"
+                ];
+
+                danmakuInterval = setInterval(() => {
+                    if (document.querySelector('.welcome-screen').style.display === 'none') {
+                        const randomMessage = presetMessages[Math.floor(Math.random() * presetMessages.length)];
+                        createDanmaku(randomMessage);
+                    }
+                }, 1500);
+
+                danmakuSend.addEventListener('click', sendUserDanmaku);
+
+                danmakuInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        sendUserDanmaku();
+                    }
+                });
+
+
+            }
+
+            function createDanmaku(text) {
+                if (!text || text.trim() === '') return;
+
+                const danmaku = document.createElement('div');
+                danmaku.className = 'danmaku';
+                danmaku.textContent = text;
+
+                switch(currentTheme) {
+                    case 'part1':
+                        danmaku.style.color = '#64ffda';
+                        break;
+                    case 'part2':
+                        danmaku.style.color = '#ff80ab';
+                        break;
+                    case 'part3':
+                        danmaku.style.color = '#b2ff59';
+                        break;
+                    case 'part4':
+                        danmaku.style.color = '#fff59d';
+                        break;
+                    default:
+                        danmaku.style.color = 'white';
+                }
+
+                const top = Math.random() * 70 + 15;
+                danmaku.style.top = `${top}vh`;
+
+                const duration = Math.random() * 5 + 6;
+                danmaku.style.animationDuration = `${duration}s`;
+
+                danmakuContainer.appendChild(danmaku);
+
+                danmaku.addEventListener('animationend', () => {
+                    danmaku.remove();
+                });
+            }
+
+            function sendUserDanmaku() {
+                const text = danmakuInput.value.trim();
+                if (text) {
+                    createDanmaku(text);
+                    danmakuInput.value = '';
+
+                    danmakuSend.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        danmakuSend.style.transform = 'scale(1)';
+                    }, 200);
+                }
+            }
+
+            document.querySelectorAll('.nav-links a, .progress-dot').forEach(element => {
+                element.addEventListener('click', () => {
+                    setTimeout(() => {
+                        const danmakus = document.querySelectorAll('.danmaku');
+                        danmakus.forEach(danmaku => {
+                            switch(currentTheme) {
+                                case 'part1':
+                                    danmaku.style.color = '#64ffda';
+                                    break;
+                                case 'part2':
+                                    danmaku.style.color = '#ff80ab';
+                                    break;
+                                case 'part3':
+                                    danmaku.style.color = '#b2ff59';
+                                    break;
+                                case 'part4':
+                                    danmaku.style.color = '#fff59d';
+                                    break;
+                                default:
+                                    danmaku.style.color = 'white';
+                            }
+                        });
+                    }, 300);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
